@@ -1,0 +1,816 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 2+10\
+\
+a<-3\
+\
+A<-6\
+a\
+A\
+\
+a<-3\
+3->a\
+\
+vec<-c(4,7,8,9)\
+vec\
+\
+vec2<-10:1000\
+\
+vec2<-c(10,11,12,13,14,15,.....)\
+\
+vec2\
+\
+file<-read.csv(file.choose(),header=TRUE)\
+\
+head(file,10)\
+tail(file,10)\
+\
+names(file)\
+\
+file[5:20,1:3]\
+\
+#How to subset\
+\
+file[5:20,"Price"]\
+file[5:20,]\
+file[5:20,c("Price","LivingArea")]\
+\
+mean(file$Price)\
+\
+median(file$Price)\
+\
+var(file$Price)\
+sd(file$Price)\
+\
+attach(file)\
+\
+quantile(file$Price)\
+quantile(file$Price,.25)\
+quantile(file$Price,.50)\
+quantile(file$Price,.75)\
+\
+IQR(file$Price)\
+\
+skewness(Price)\
+\
+install.packages("moments")\
+library("moments")\
+skewness(Price)\
+\
+file_1<-subset(file,Price>mean(Price))\
+\
+nrow(file_1)\
+\
+table(file$Fireplace)\
+\
+table(file$Bathrooms)\
+\
+#find the prices of the houses where there is no fireplace, \
+#living area is more than 2500 and no of Bathrooms are more than 3\
+\
+\
+file_2<-subset(file,(Fireplace==0)&(LivingArea>1000)&(Bathrooms>3))\
+\
+file_2\
+\
+file$Price[]\
+\
+vec<-c(1,2,1,1,2,2,2,2,3,3,4,4,4,4,5,6,6,6,6,6)\
+\
+table(vec)\
+\
+names(table(vec))[table(vec)==max(table(vec))]\
+\
+funct_mode<-function(x)\{\
+  \
+  names(table(x))[table(x)==max(table(x))]\
+  \
+\}\
+\
+y<-c(34,34,23,34,26,23,34)\
+\
+funct_mode(y)\
+\
+\
+func_new<-function(x,y,z)\{\
+  \
+  a<-2*x+3*y+5*z\
+  print(a)\
+\}\
+\
+func_new(23,4,70)\
+\
+51%%7\
+\
+\
+vec_1<-c(34,35,37,78,23)\
+\
+vec_1[3]\
+\
+vec_1[c(3,5)]\
+\
+vec_2<-c(91,95,89,76,65,45)\
+\
+mat<-matrix(vec_2,nrow=2)\
+mat\
+mat[1,2]\
+\
+mat<-matrix(vec_2,nrow=2,byrow=T)\
+mat\
+\
+xx<- matrix(c(12,10,11,44,	16,	13,	53,	92,	81,	80,	52,	19,	77,	85,	23,	58,	94,	77,	14,	38,	59,	22,	65,	69,	60,	66,	93,	81,	52,	93),nrow=10,byrow=F)\
+\
+xx\
+\
+colnames(xx)<-c('emp1','emp2','emp3')\
+xx\
+\
+rownames(xx)<-c('day1','day2','day3','day4','day5','day6','day7','day8','day9','day10')\
+xx\
+\
+mat1<-matrix(c(23,24,26,29),2,2)\
+mat1\
+\
+mat2<-matrix(c(33,34,36,39),2,2)\
+mat2\
+\
+foo<-array(c(mat1,mat2),c(2,2,2))\
+foo\
+\
+#factor\
+\
+file<-read.csv(file.choose(),header=TRUE)\
+\
+head(file)\
+\
+class(file$Fireplace)\
+\
+file$Fireplace_f<-factor(file$Fireplace)\
+head(file)\
+class(file$Fireplace_f)\
+\
+table(file$Fireplace_f)\
+file$Fireplace_f\
+file$Fireplace\
+\
+?mean\
+\
+\
+age<-12\
+\
+if(age>18)\{\
+  print("major")\
+\}else\{\
+  print("minor")\
+\}\
+\
+x<-0\
+\
+if(x>0)\{\
+  print("+ve")\
+\}else if(x==0)\{\
+  print("0")\
+\}else\{\
+  print("-ve")\
+\} \
+\
+a<-c(2,6,9,15)\
+\
+ifelse(a%%2==0,"even","odd")\
+\
+a[1]\
+a[2]\
+a[3]\
+a[4]\
+\
+a<-c(2,6,9,15)\
+\
+for(x in a)\{\
+  print(x)\
+\} \
+\
+for(i in 1:4)\{\
+  print(a[i])\
+\}\
+\
+xx\
+\
+max(xx[1,])\
+max(xx[2,])\
+max(xx[3,])\
+\
+xx\
+\
+for (i in 1:10)\{\
+print(max(xx[i,]))\
+  \}\
+\
+p<-6\
+i<-1\
+\
+while(i<p)\{\
+  \
+  print(i)\
+  i=i+1\
+\}\
+\
+xx\
+\
+apply(xx,2,max)\
+apply(xx,1,max)\
+\
+xx.frame<-data.frame(xx)\
+xx.frame\
+class(xx.frame)\
+\
+apply(xx.frame,1,mean)\
+\
+xx.frame$days<-c('one','two','three','four','five','six','seven','eight','nine','ten')\
+\
+xx.frame\
+\
+apply(xx.frame[,-4],1,mean)\
+\
+xx.frame<-xx.frame[,c(4,1:3)]\
+xx.frame\
+\
+xx.frame\
+\
+xx.frame$days<-c('one','two','three','four','five','six','seven','eight','nine','ten')\
+\
+xx.frame\
+xx.frame<-xx.frame[,c(4,1:3)]\
+xx.frame\
+\
+xx.frame[7,4]<-NA\
+\
+xx.frame\
+\
+#to dlete the records with missing values\
+\
+xx.frame_1<-na.omit(xx.frame)\
+xx.frame_1\
+\
+subset(xx.frame,is.na(xx.frame$emp3))\
+subset(xx.frame,is.na(xx.frame$emp3)==F)\
+\
+xx.frame\
+\
+mean(xx.frame$emp3,na.rm=T)\
+\
+\
+xx.frame\
+\
+mean(xx.frame$emp3,na.rm=T)\
+\
+#missing value imputation\
+\
+xx.frame$emp3[is.na(xx.frame$emp3)]=mean(xx.frame$emp3,na.rm=T)\
+\
+xx.frame\
+\
+head(file)\
+table(file$Bathrooms)\
+\
+mean(file$Price[file$Bathrooms==1])\
+mean(file$Price[file$Bathrooms==1.5])\
+mean(file$Price[file$Bathrooms==2])\
+mean(file$Price[file$Bathrooms==2.5])\
+\
+\
+tapply(file$Price,file$Bathrooms,mean,na.rm=T)\
+\
+head(file)\
+\
+tapply(file$Price,file$Fireplace,mean,na.rm=T)\
+\
+hyp1<-read.csv(file.choose(),header=T)\
+\
+hyp2<-read.csv(file.choose(),header=T)  \
+\
+head(hyp2)\
+\
+table(hyp2$Player)\
+\
+tapply(hyp2$SR,hyp2$Player,mean)\
+\
+?tapply\
+\
+unique(hyp2$Player)\
+\
+unique(hyp2$Opposition)\
+\
+class(unique(hyp2$Opposition))\
+\
+a<-c("Shubham","Vaibhav")\
+\
+b<-toupper(a)\
+b\
+c<-tolower(b)\
+c\
+\
+?substr\
+\
+d<-c('abcdef','pqr')\
+\
+substr(d,2,3)\
+substr(d,2,5)\
+\
+substring(d,3)\
+\
+?paste\
+\
+paste("Shubham","Pandey")\
+\
+paste0("Shubham","Pandey")\
+\
+paste("Shubham","Pandey",sep="-")\
+\
+paste0("Shubham","Pandey")\
+\
+z<-c("shubham","pandey")\
+\
+proper=function(x) paste0(toupper(substr(x,1,1)),tolower(substring(x,2)))\
+\
+proper(z)\
+\
+install.packages('stringr')\
+\
+library('stringr')\
+\
+vec<-c("Shubham Pandey","Vaibhav Pandey")\
+\
+vec_1<-str_replace(vec,"Pandey","")\
+vec_1\
+\
+unique(hyp2$Dismissal)\
+\
+#leg before wicket\
+\
+hyp2$Dismissal2<-str_replace(hyp2$Dismissal,"lbw","leg before wicket")\
+\
+unique(hyp2$Dismissal2)\
+\
+ws_vec<-c(" Shubham  Pandey","Vaibhav Pandey  "," Sahil Pandey ")\
+\
+?trimws\
+\
+trimws(ws_vec,which='l')\
+trimws(ws_vec,which='r')\
+trimws(ws_vec,which='b')\
+\
+\
+pnorm(600,494,100)-pnorm(300,494,100)\
+pnorm(217,220,15/sqrt(100))\
+\
+pnorm(446,448,21/sqrt(49))-pnorm(441,448,21/sqrt(49))\
+\
+xbar<-6.5\
+psd<-3.2\
+ci<-.95\
+z<-qnorm((1-ci)/2,0,1)\
+n<-100\
+\
+mu1<-xbar-z*psd/sqrt(n)\
+mu2<-xbar+z*psd/sqrt(n)\
+mu1\
+mu2\
+\
+xbar<-10.37\
+ssd<-3.5\
+ci<-.95\
+n<-15\
+df<-n-1\
+t<-qt((1-ci)/2,df)\
+\
+mu1<-xbar-t*ssd/sqrt(n)\
+mu2<-xbar+t*ssd/sqrt(n)\
+mu1\
+mu2\
+\
+x<-8\
+\
+if(x>0)\{print("+ve")\}else if(x==0)\{print("0")\
+\}else\{\
+  print("-ve")\
+\} \
+\
+if(x>0)\{\
+  print("+ve")\
+\}else if(x==0)\{\
+  print("0")\
+\}else\{\
+  print("-ve")\
+\} \
+\
+pnorm(1999.6,2000,1.30/sqrt(40))\
+\
+hyp1<-read.csv(file.choose(),header=T)\
+\
+hyp2<-read.csv(file.choose(),header=T) \
+\
+\
+head(hyp2)\
+\
+\
+#Ho: mu>80\
+#Ha: mu<80\
+mu<-80\
+\
+hyp2[hyp2$Player=="Sachin",]\
+\
+nrow(hyp2[hyp2$Player=="Sachin",])\
+\
+hyp2_1<-subset(hyp2,hyp2$Player=="Sachin")\
+\
+n<-nrow(hyp2_1)\
+\
+table(hyp2$Player)\
+\
+xbar<-mean(hyp2$SR[hyp2$Player=="Sachin"])\
+\
+s<-sd(hyp2$SR[hyp2$Player=="Sachin"])\
+\
+t<-(xbar-mu)/(s/sqrt(n))\
+n<-nrow(hyp2_1)\
+pt(t,n-1)\
+\
+\
+t.test(hyp2$SR[hyp2$Player=="Sachin"],mu=80,alternative = "less")\
+\
+#Ho: SR(S)=SR(D)\
+#Ha: SR(S) is not equal to SR(D)\
+\
+t.test(hyp2$SR[hyp2$Player=="Sachin"],hyp2$SR[hyp2$Player=="Dravid"])\
+\
+t.test(hyp2$SR ~ hyp2$Player)\
+\
+head(hyp1)\
+\
+#Ho: math1(B)=math1(G)\
+#Ha: math1(B) is not equal to math1(G)\
+\
+t.test(hyp1$Math1~hyp1$Gender)\
+\
+t.test(hyp1$Math1,hyp1$Math2,paired=T)\
+\
+#H0: math1(P1)=math1(P2)=math1(P3)\
+\
+class(hyp1$Prog)\
+\
+result<-aov(hyp1$Math1 ~ as.factor(hyp1$Prog) )\
+summary(result)\
+\
+head(hyp1)\
+\
+chisq.test(hyp1$School,hyp1$Prog)\
+\
+table(hyp1$School,hyp1$Prog)\
+\
+hp<-read.csv(file.choose(),header=T)\
+head(hp)\
+\
+plot(hp$LivingArea,hp$Price,main="Price vs Living Area",xlab="Living Area",ylab="Price")\
+\
+cor(hp$LivingArea,hp$Price)\
+\
+hp_1<-hp[,c(1,2,5,6)]\
+\
+\
+library('corrplot')\
+cor_mat<-cor(hp_1)\
+\
+corrplot(cor_mat)\
+\
+install.packages('caTools')\
+library('caTools')\
+\
+set.seed(2020)\
+split<-sample.split(hp$Price,SplitRatio = 3/4)\
+\
+train_hp<-subset(hp,split==T)\
+test_hp<-subset(hp,split==F)\
+nrow(train_hp)\
+nrow(test_hp)\
+\
+nrow(train_hp)+nrow(test_hp)\
+\
+fit<-lm(Price~LivingArea+Age+LotSize,train_hp)\
+summary(fit)\
+\
+library('car')\
+\
+vif(fit)\
+\
+credit<-read.csv(file.choose(),header=T)\
+\
+head(credit)\
+\
+credit_1<-credit[,c(1,3,6,9,14)]\
+head(credit_1)\
+\
+set.seed(2020)\
+split<-sample.split(credit_1$Default,SplitRatio = 3/4)\
+\
+train_credit<-subset(credit_1,split==T)\
+test_credit<-subset(credit_1,split==F)\
+nrow(train_credit)\
+nrow(test_credit)\
+\
+nrow(train_credit)+nrow(test_credit)\
+\
+log_fit<-glm(Default ~ .,data=train_credit,family='binomial')\
+summary(log_fit)\
+\
+test_credit$pro_def<-predict(log_fit,test_credit,type='response')\
+\
+head(test_credit)\
+\
+\
+test_credit$pred_default<-ifelse(test_credit$pro_def>.5,1,0)\
+head(test_credit)\
+\
+tab<-table(test_credit$Default,test_credit$pred_default)\
+tab\
+\
+accuracy<-100*sum(diag(tab))/sum(tab)\
+accuracy\
+\
+\
+log_fit_1<-glm(Default ~ duration+amount+factor(installment),data=train_credit,family='binomial')\
+summary(log_fit_1)\
+\
+unique(train_credit$installment)\
+\
+university<-read.csv(file.choose(),header=T)\
+university\
+\
+stand_uni<-scale(university[,-1])\
+stand_uni\
+\
+d<-dist(stand_uni,method='euclidean')\
+d\
+\
+#Hierarchical clustering\
+\
+fit<-hclust(d,method='complete')\
+plot(fit)\
+plot(fit,labels=university[,1])\
+\
+groups<-cutree(fit,k=3)\
+groups\
+rect.hclust(fit,k=3,border='red')\
+\
+membership<-matrix(groups)\
+membership\
+\
+hclust_uni<-data.frame(university,membership)\
+hclust_uni\
+\
+#cluster profiling\
+\
+tapply(hclust_uni$Expenses,hclust_uni$membership,min)\
+tapply(hclust_uni$Expenses,hclust_uni$membership,max)\
+tapply(hclust_uni$Expenses,hclust_uni$membership,mean)\
+\
+aggregate(hclust_uni[,2:7],list(membership),FUN=min)\
+aggregate(hclust_uni[,2:7],list(membership),FUN=max)\
+aggregate(hclust_uni[,2:7],list(membership),FUN=mean)\
+\
+\
+install.packages('factoextra')\
+\
+\
+data<-read.csv(file.choose(),header=T)\
+head(data)\
+\
+install.packages(c('rpart','rpart.plot'))\
+\
+data$NSP<-factor(data$NSP)\
+\
+class(data$NSP)\
+\
+set.seed(2020)\
+split<-sample.split(data$NSP,SplitRatio = 3/4)\
+\
+train_nsp<-subset(data,split==T)\
+test_nsp<-subset(data,split==F)\
+nrow(train_nsp)\
+nrow(test_nsp)\
+\
+nrow(train_nsp)+nrow(test_nsp)\
+\
+\
+model<-rpart(NSP ~ .,data=train_nsp,control=rpart.control(minsplit=141,minbucket = 47,xval=10))\
+rpart.plot(model)\
+\
+47*3\
+\
+1594*3/100\
+\
+test_nsp$pred_nsp<-predict(model,test_nsp,type="class")\
+\
+tab<-table(test_nsp$pred_nsp,test_nsp$NSP)\
+\
+sum(diag(tab))/nrow(test_nsp)\
+\
+?model.matrix\
+\
+\
+install.packages('arules')\
+install.packages('arulesViz')\
+\
+library('arules')\
+\
+library('arulesViz')\
+\
+Groceries<-read.transactions(file.choose(),sep=',')\
+\
+summary(Groceries)\
+\
+#Reading the data\
+\
+inspect(Groceries[1:10])\
+\
+itemFrequencyPlot(Groceries,topN=20)\
+itemFrequencyPlot(Groceries,topN=20,type='absolute')\
+\
+\
+\
+Groceries<-read.transactions(file.choose(),sep=',')\
+\
+summary(Groceries)\
+\
+#Reading the data\
+\
+inspect(Groceries[1:10])\
+\
+itemFrequencyPlot(Groceries,topN=20)\
+itemFrequencyPlot(Groceries,topN=20,type='absolute')\
+\
+\
+rules<-apriori(Groceries,parameter = list(support=.001,conf=.8,minlen=2),control = list(verbose=F,sort=F))\
+\
+summary(rules)\
+\
+inspect(rules[1:20])\
+\
+rules<-sort(rules,by='confidence',decreasing = T)\
+\
+inspect(rules[1:50])\
+\
+#What are the customers like to buy if they prchase whole milk\
+\
+rules_1<-apriori(Groceries,\
+               parameter = list(support=.001,conf=.8,minlen=2),\
+               control = list(verbose=F,sort=F),\
+               appearance = list(lhs='whole milk',default='rhs'))\
+\
+inspect(rules_1)\
+rules_1\
+\
+#What are the customers like to buy before they prchase whole milk\
+\
+rules<-apriori(Groceries,\
+               parameter = list(support=.001,conf=.8,minlen=2),\
+               control = list(verbose=F,sort=F),\
+               appearance = list(rhs='whole milk',default='lhs'))\
+\
+rules<-sort(rules,by='confidence',decreasing = T)\
+inspect(rules[1:10])\
+\
+#Naive Bayes\
+\
+library('e1071')\
+\
+\
+file<-read.csv(file.choose(),header=T)\
+head(file)\
+file$NSP<-factor(file$NSP)\
+\
+library('caTools')\
+\
+set.seed(2020)\
+split<-sample.split(file$NSP,SplitRatio = 3/4)\
+\
+train_nsp<-subset(file,split==T)\
+test_nsp<-subset(file,split==F)\
+nrow(train_nsp)\
+nrow(test_nsp)\
+\
+nrow(train_nsp)+nrow(test_nsp)\
+\
+n<-naiveBayes(NSP~.,data=train_nsp)\
+test_nsp$pred_nsp=predict(n,test_nsp)\
+tab<-table(test_nsp$pred_nsp,test_nsp$NSP)\
+tab\
+sum(diag(tab))/sum(tab)\
+\
+#KNN\
+\
+#Lesson 11 Classification Ex 1\
+\
+file<-read.csv(file.choose(),header=T)\
+head(file)\
+\
+library('caTools')\
+\
+set.seed(2020)\
+split<-sample.split(file$Default,SplitRatio = 3/4)\
+\
+train_gc<-subset(file,split==T)\
+test_gc<-subset(file,split==F)\
+nrow(train_gc)\
+nrow(test_gc)\
+\
+nrow(train_gc)+nrow(test_gc)\
+\
+is.numeric(train_gc$checkingstatus1)\
+is.numeric(train_gc$amount)\
+\
+num.vars<-sapply(train_gc,is.numeric)\
+num.vars\
+\
+train_gc_n<-train_gc[,num.vars]\
+\
+train_gc_n\
+\
+train_gc_n_std<-scale(train_gc_n[,-1])\
+train_gc_n_std\
+\
+\
+num.vars<-sapply(test_gc,is.numeric)\
+\
+test_gc_n<-test_gc[,num.vars]\
+\
+test_gc_n_std<-scale(test_gc_n[,-1])\
+test_gc_n_std\
+\
+install.packages('class')\
+library('class')\
+\
+knn_m<-knn(train_gc_n_std,test_gc_n_std,train_gc_n$Default,k=3)\
+\
+test_gc_n$predicted_d<-knn_m\
+\
+acc<-table(test_gc_n$Default,test_gc_n$predicted_d)\
+\
+sum(diag(acc))/sum(acc)\
+\
+\
+for (i in 1:30)\{\
+  knn_m<-knn(train_gc_n_std,test_gc_n_std,train_gc_n$Default,k=i)\
+  \
+  test_gc_n$predicted_d<-knn_m\
+  \
+  tab<-table(test_gc_n$Default,test_gc_n$predicted_d)\
+  \
+  acc<-sum(diag(tab))/sum(tab)\
+  print(paste("the accuracy is",acc,"for the value of k= ",i))\
+  \
+  \}\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

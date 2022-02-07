@@ -1,0 +1,438 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 2+10\
+\
+A<-25\
+\
+a<-50\
+\
+file<-read.csv(file.choose(),header=T)\
+\
+head(file,3)\
+tail(file,12)\
+\
+pnorm(600,494,100)-pnorm(300,494,100)\
+\
+\
+pop_mean<-220\
+pop_sd<-15\
+sample_size<-100\
+x_val<-217\
+pnorm(x_val,pop_mean,pop_sd/sqrt(sample_size))\
+\
+#comcast\
+\
+sample_mean<-6.5\
+sample_size<-100\
+pop_sd<-3.2\
+conf_interval<-.95\
+z<-qnorm((1-conf_interval)/2)\
+\
+mu1<-sample_mean+z*(pop_sd/sqrt(sample_size))\
+mu2<-sample_mean-z*(pop_sd/sqrt(sample_size))\
+mu1\
+mu2\
+\
+#Stock Market\
+\
+sample_mean<-10.37\
+sample_size<-15\
+sample_sd<-3.5\
+conf_interval<-.95\
+t<-qt((1-conf_interval)/2,sample_size-1)\
+\
+mu1<-sample_mean+t*(sample_sd/sqrt(sample_size))\
+mu2<-sample_mean-t*(sample_sd/sqrt(sample_size))\
+mu1\
+mu2\
+\
+hyp1<-read.csv(file.choose(),header=T)\
+\
+hyp2<-read.csv(file.choose(),header=T) \
+\
+\
+head(hyp2,10)\
+tail(hyp2,3)\
+\
+median(hyp2$SR)\
+summary(hyp2$SR)\
+\
+quantile(hyp2$SR)\
+\
+quantile(hyp2$SR,.25)\
+\
+quantile(hyp2$SR,.50)\
+quantile(hyp2$SR,.75)\
+\
+var(hyp2$SR)\
+sd(hyp2$SR)\
+\
+table(hyp2$Player)\
+\
+#subsetting the dataframe\
+\
+# 5th to 10th row, first 4 columns\
+\
+hyp2[5:10,1:4]\
+\
+# 5th row and 8th row, 1st column and 5th column\
+\
+hyp2[c(5,8),c(1,5)]\
+\
+#all the records with only 1st and 5th column\
+\
+hyp2[,c(1,5)]\
+\
+#only records belonging to Sachin\
+\
+hyp2[hyp2$Player=="Sachin",]\
+\
+hyp2_1<-subset(hyp2,hyp2$Player=="Sachin")\
+hyp2_1\
+\
+nrow(hyp2_1)\
+\
+unique(hyp2$Player)\
+unique(hyp2_1$Player)\
+\
+#all data with only columns - Player, runs and Dismissal\
+\
+new <- hyp2[,c("Player","Runs","Dismissal")]\
+\
+head(new)\
+\
+names(hyp2)\
+\
+table(hyp2_1$Pos)\
+\
+names(table(hyp2_1$Pos))\
+\
+names(table(hyp2_1$Pos))[table(hyp2_1$Pos)==max(table(hyp2_1$Pos))]\
+\
+\
+fun_mode<-function(x)\{\
+\
+  names(table(x))[table(x)==max(table(x))]\
+  \
+\}\
+\
+\
+aa<-c(1,1,1,1,3,3,3,3,3,7,8,9,9,9,9,9,9,7,7,7,7,7)\
+\
+fun_mode(aa)\
+\
+func_any<-function(x,y,z)\{\
+  \
+  a<-x+7*z\
+  b<-a+100*z\
+  print(b)\
+  \
+\}\
+\
+func_any(2,5,7)\
+\
+\
+vec<-c(1,4,7,9,8,"char")\
+\
+vec\
+vec[2]\
+\
+vec[6]\
+\
+vec[0]\
+\
+mat<-matrix(vec,nrow=2)\
+mat\
+\
+mat1<-matrix(vec,nrow=2,byrow=T)\
+mat1\
+\
+xx<- matrix(c(12,10,11,44,	16,	13,	53,	92,	81,	80,	52,	19,	77,	85,	23,	58,	94,	77,	14,	38,	59,	22,	65,	69,	60,	66,	93,	81,	52,	93),nrow=10,byrow=F)\
+\
+rownames(xx)<-c("Day1",	"Day2",	"Day3",	"Day4",	"Day5",	"Day6",	"Day7",	"Day8",	"Day9",	"Day10")\
+colnames(xx)<-c('C1','C2','C3')\
+\
+xx\
+\
+xx[7,3]\
+\
+xx[c(1,10),]\
+\
+a<-matrix(c(1,3,5,9),2,2)\
+a\
+b<-matrix(c(4,8,9,7),2,2)\
+b\
+foo<-array(c(a,b),c(2,2,2))\
+foo\
+\
+\
+\
+\
+age<-12\
+\
+if (age>18)\{\
+  print("major")\
+\}else\{\
+  print("minor")\
+\}\
+\
+x<-0\
+\
+if(x<0)\{\
+  print("negative")\
+\}else if(x>0)\{\
+  print("positive")\
+\}else\
+  print ("zero")\
+\
+aa<-c(1,4,6,9)\
+\
+ifelse(aa%%2==0,"Even","ODD")\
+\
+#Loops\
+\
+aa<-c(1,4,6,9)\
+\
+aa[1]\
+aa[2]\
+aa[3]\
+aa[4]\
+\
+aa<-c(1,4,6,9)\
+\
+for(x in aa)\{\
+  print(x)\
+\}\
+\
+for(i in 1:4)\{\
+print(aa[i])\
+\}\
+\
+xx\
+\
+max(xx[1,])\
+max(xx[2,])\
+\
+for(i in 1:10)\{\
+  print(max(xx[i,]))\
+\}\
+\
+\
+?apply()\
+\
+apply(xx,1,max)\
+\
+apply(xx,2,max)\
+\
+hyp1<-read.csv(file.choose(),header=T)\
+\
+hyp2<-read.csv(file.choose(),header=T) \
+\
+head(hyp2)\
+\
+#ho: mu>80\
+#ha: mu<=80\
+\
+hyp2_1<-subset(hyp2,hyp2$Player=="Sachin")\
+hyp2_1\
+\
+xbar<-mean(hyp2_1$SR)\
+s<-sd(hyp2_1$SR)\
+mu<-80\
+n<-nrow(hyp2_1)\
+\
+t<-(xbar-mu)/(s/sqrt(n))\
+t\
+\
+pt(t,n-1)\
+\
+t.test(hyp2_1$SR,mu=80,alternative = "less",conf.level = 0.90)\
+\
+?t.test\
+\
+#ha: SR(Sachin)=SR(Dravid)\
+#ha: SR(Sachin) not equal to SR(Dravid)\
+\
+\
+t.test(hyp2$SR[hyp2$Player=="Sachin"],hyp2$SR[hyp2$Player=="Dravid"])\
+\
+t.test(hyp2$SR ~ hyp2$Player)\
+\
+hyp1<-read.csv(file.choose(),header=T)\
+head(hyp1)\
+\
+\
+Ho: mu(math1)=mu(math2) [mu(math1)- mu(math2) = 0]\
+\
+HA: mu(math1) not equal to mu(math2) [mu(math1)- mu(math2) NE 0]\
+\
+t.test(hyp1$Math1,hyp1$Math2,paired=T)\
+\
+?t.test\
+\
+head(hyp1)\
+\
+aa<-aov(hyp1$Math1 ~ factor(hyp1$Race))\
+summary(aa)\
+\
+cc<-chisq.test(hyp1$School,hyp1$Prog)\
+\
+cc$observed\
+cc$expected\
+\
+\
+\
+\
+#Ho: selection of program and school of the student are independent\
+\
+\
+\
+install.packages('arules')\
+library('arules')\
+\
+Groceries<-read.transactions(file.choose(),sep=',')\
+summary(Groceries)\
+\
+inspect(Groceries[1:20])\
+\
+itemFrequencyPlot(Groceries,topN=20,type='absolute')\
+itemFrequencyPlot(Groceries,topN=20,type='relative')\
+\
+rules<-apriori(Groceries,parameter = list(support=.001,confidence=.08,minlen=2),control=list(verbose=F,sort=F))\
+inspect(rules[1:10])\
+\
+rules_c<-sort(rules,by='confidence',decreasing=T)\
+inspect(rules_c[1:20])\
+\
+\
+# what customers are likely to purchase after whipped/sour cream\
+\
+rules<-apriori(Groceries,parameter = list(support=.001,confidence=.08,minlen=2),control=list(verbose=F),appearance = list(default='rhs',lhs='whipped/sour cream'))\
+rules\
+inspect(rules)\
+\
+rules_sort<-sort(rules,by='lift',decreasing = T)\
+inspect(rules_sort)\
+\
+#classification example 4\
+\
+nsp<-read.csv(file.choose(),header=T)\
+\
+install.packages('rpart')\
+library('rpart')\
+\
+str(nsp)\
+nsp$NSP<-as.factor(nsp$NSP)\
+\
+library('caTools')\
+\
+set.seed(1234)\
+split<-sample.split(nsp$NSP,SplitRatio=3/4)\
+train_nsp<-subset(nsp,split==T)\
+test_nsp<-subset(nsp,split==F)\
+\
+\
+r.ctrl=rpart.control(minsplit=100,minbucket=32,xval=10)\
+\
+.02*nrow(train_nsp)\
+  \
+model<-rpart(NSP~.,data=train_nsp,method='class',control=r.ctrl)\
+\
+model\
+\
+\
+library('rpart.plot')\
+rpart.plot(model)\
+\
+test_nsp$predict_nsp<-predict(model,test_nsp,type='class')\
+\
+tab<-table(test_nsp$NSP,test_nsp$predict_nsp)\
+\
+tab\
+\
+sum(diag(tab))/sum(tab)\
+\
+\
+library('e1071')\
+\
+\
+model_nb<-naiveBayes(NSP~.,data=train_nsp)\
+\
+test_nsp$pred_nb_nsp<-predict(model_nb,test_nsp)\
+\
+tab_nb<-table(test_nsp$NSP,test_nsp$pred_nb_nsp)\
+tab_nb\
+sum(diag(tab_nb))/sum(tab_nb)\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
